@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:Android="http://schemas.android.com/apk/res/android"
+    Android:orientation="horizontal"
+    Android:layout_width="fill_parent"
+    Android:layout_height="fill_parent">
+
+    <!-- 图书封面 -->
+    <ImageView Android:id="@+id/iv_book"
+        Android:layout_width="150dp"
+        Android:layout_height="150dp"
+        Android:layout_margin="5dp"
+        Android:background="@drawable/book_null"/>
+
+    <!-- 图书信息 -->
+    <LinearLayout Android:orientation="vertical"
+        Android:layout_width="wrap_content"
+        Android:layout_height="wrap_content"
+        Android:layout_marginLeft="10dp">
+
+        <TextView Android:id="@+id/tv_bookname"
+            Android:layout_marginTop="15dp"
+            Android:layout_width="wrap_content"
+            Android:layout_height="wrap_content"
+            Android:textColor="#000000"
+            Android:textSize="20dp"
+            Android:text="书名"/>
+
+        <TextView Android:id="@+id/tv_bookauthor"
+            Android:layout_marginTop="10dp"
+            Android:layout_width="wrap_content"
+            Android:layout_height="wrap_content"
+            Android:textColor="#000000"
+            Android:textSize="15dp"
+            Android:text="作者"/>
+    </LinearLayout>
+</LinearLayout>
