@@ -81,8 +81,8 @@ public class MainActivity extends Activity implements View.OnClickListener, Adap
 
         // Setting colors for different tabs when there's more than three of them.
         // You can set colors for tabs in three different ways as shown below.
-//        mBottomBar.mapColorForTab(0, ContextCompat.getColor(this, R.color.gray));
-//        mBottomBar.mapColorForTab(1, "#7B1FA2");
+        mBottomBar.mapColorForTab(0, ContextCompat.getColor(this, R.color.gray));
+        mBottomBar.mapColorForTab(1, "#7B1FA2");
     }
 
     @Override

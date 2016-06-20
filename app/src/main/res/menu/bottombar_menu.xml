@@ -1,14 +1,14 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/bottomBarItemOne"
-        android:icon="@drawable/ic_recents"
+        android:icon="@drawable/ic_scan"
         android:title="Recents" />
     <item
         android:id="@+id/bottomBarItemTwo"
-        android:icon="@drawable/ic_recents"
+        android:icon="@drawable/ic_scan"
         android:title="Recents" />
     <item
         android:id="@+id/bottomBarItemThree"
-        android:icon="@drawable/ic_recents"
+        android:icon="@drawable/ic_scan"
         android:title="Recents" />
 </menu>
