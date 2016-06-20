@@ -4,6 +4,9 @@ import android.app.Activity;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.support.annotation.IdRes;
+import android.support.v4.content.ContextCompat;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -13,6 +16,9 @@ import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.Toast;
+
+import com.roughike.bottombar.BottomBar;
+import com.roughike.bottombar.OnMenuTabClickListener;
 
 import java.util.HashMap;
 
@@ -27,6 +33,8 @@ public class MainActivity extends Activity implements View.OnClickListener, Adap
     private EditText search_ET;
     private Button search_B;
     private ListView main_LV;
+
+    private BottomBar mBottomBar;
 
     private BookService booklist_BS;
     private InitDataBase book_ID;
@@ -52,10 +60,44 @@ public class MainActivity extends Activity implements View.OnClickListener, Adap
         qrcode_IB.setOnClickListener(this);
 
         main_LV.setOnItemClickListener(this);
+
+        mBottomBar = BottomBar.attach(this, savedInstanceState);
+        mBottomBar.setItems(R.menu.bottombar_menu);
+        mBottomBar.setOnMenuTabClickListener(new OnMenuTabClickListener() {
+            @Override
+            public void onMenuTabSelected(@IdRes int menuItemId) {
+                if (menuItemId == R.id.bottomBarItemOne) {
+                    // The user selected item number one.
+                }
+            }
+
+            @Override
+            public void onMenuTabReSelected(@IdRes int menuItemId) {
+                if (menuItemId == R.id.bottomBarItemOne) {
+                    // The user reselected item number one, scroll your content to top.
+                }
+            }
+        });
+
+        // Setting colors for different tabs when there's more than three of them.
+        // You can set colors for tabs in three different ways as shown below.
+//        mBottomBar.mapColorForTab(0, ContextCompat.getColor(this, R.color.gray));
+//        mBottomBar.mapColorForTab(1, "#7B1FA2");
     }
 
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+
+        // Necessary to restore the BottomBar's state, otherwise we would
+        // lose the current tab on orientation change.
+        mBottomBar.onSaveInstanceState(outState);
+    }
+
+
+
     /*
-    * 点击相应函数*/
+    * 点击响应函数*/
     @Override
     public void onClick(View view) {
         switch (view.getId()){
