@@ -18,6 +18,7 @@ import android.widget.SimpleAdapter;
 import android.widget.Toast;
 
 import com.roughike.bottombar.BottomBar;
+import com.roughike.bottombar.BottomBarTab;
 import com.roughike.bottombar.OnMenuTabClickListener;
 
 import java.util.HashMap;
@@ -62,6 +63,8 @@ public class MainActivity extends Activity implements View.OnClickListener, Adap
         main_LV.setOnItemClickListener(this);
 
         mBottomBar = BottomBar.attach(this, savedInstanceState);
+        mBottomBar.setActiveTabColor("#67d0e2");
+
         mBottomBar.setItems(R.menu.bottombar_menu);
         mBottomBar.setOnMenuTabClickListener(new OnMenuTabClickListener() {
             @Override
@@ -81,8 +84,8 @@ public class MainActivity extends Activity implements View.OnClickListener, Adap
 
         // Setting colors for different tabs when there's more than three of them.
         // You can set colors for tabs in three different ways as shown below.
-        mBottomBar.mapColorForTab(0, ContextCompat.getColor(this, R.color.gray));
-        mBottomBar.mapColorForTab(1, "#7B1FA2");
+//        mBottomBar.mapColorForTab(0, ContextCompat.getColor(this, R.color.blue_dark));
+//        mBottomBar.mapColorForTab(1, "#7B1FA2");
     }
 
     @Override
