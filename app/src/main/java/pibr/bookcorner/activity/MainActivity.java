@@ -64,7 +64,6 @@ public class MainActivity extends Activity implements View.OnClickListener, Adap
 
         mBottomBar = BottomBar.attach(this, savedInstanceState);
         mBottomBar.setActiveTabColor("#67d0e2");
-
         mBottomBar.setItems(R.menu.bottombar_menu);
         mBottomBar.setOnMenuTabClickListener(new OnMenuTabClickListener() {
             @Override
