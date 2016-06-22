@@ -27,7 +27,6 @@ import pibr.bookcorner.R;
 import pibr.bookcorner.service.BookService;
 import pibr.bookcorner.service.InitDataBase;
 
-
 public class MainActivity extends Activity implements View.OnClickListener, AdapterView.OnItemClickListener{
 
     private ImageButton qrcode_IB;
@@ -68,9 +67,18 @@ public class MainActivity extends Activity implements View.OnClickListener, Adap
         mBottomBar.setOnMenuTabClickListener(new OnMenuTabClickListener() {
             @Override
             public void onMenuTabSelected(@IdRes int menuItemId) {
-                if (menuItemId == R.id.bottomBarItemOne) {
-                    // The user selected item number one.
+                switch (menuItemId) {
+                    case R.id.bottomBarItemOne:
+                        break;
+                    case R.id.bottomBarItemTwo:
+                        Intent intent = new Intent();
+                        intent.setClass(getApplicationContext(), ARActivity.class);
+                        startActivity(intent);
+                        break;
+                    case R.id.bottomBarItemThree:
+                        break;
                 }
+
             }
 
             @Override
