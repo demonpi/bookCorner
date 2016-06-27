@@ -6,7 +6,7 @@ model{
         buildToolsVersion = "23.0.0"
     }
     android.ndk {
-            moduleName = "HelloARNative"
+            moduleName = "bookCorner"
             cppFlags.add("-I${file("package/include")}".toString())
             cppFlags.add("-DANDROID")
             cppFlags.add("-fexceptions")
