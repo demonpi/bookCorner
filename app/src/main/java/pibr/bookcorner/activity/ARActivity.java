@@ -3,13 +3,13 @@ package pibr.bookcorner.activity;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.app.Activity;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.ViewGroup;
 import android.view.WindowManager;
 
 import pibr.bookcorner.R;
 import cn.easyar.engine.EasyAR;
+import pibr.bookcorner.arutil.GLView;
+import pibr.bookcorner.arutil.Renderer;
 
 public class ARActivity extends Activity {
 

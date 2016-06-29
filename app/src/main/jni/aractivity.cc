@@ -97,10 +97,9 @@ namespace EasyAR {
                 }
                 if (!tracked_target) {
                     if (video == NULL) {
-                        if(frame.targets()[0].target().name() == std::string("argame") && texid[0]) {
+                        if(frame.targets()[0].target().name() == std::string("argame00") && texid[0]) {
                             video = new ARVideo;
-//                    video->openVideoFile("video.mp4", texid[0]);
-                            video->openVideoFile("fema.wmv", texid[0]);
+                            video->openVideoFile("video.mp4", texid[0]);
                             video_renderer = renderer[0];
                         }
                         else if(frame.targets()[0].target().name() == std::string("namecard") && texid[1]) {
@@ -110,7 +109,22 @@ namespace EasyAR {
                         }
                         else if(frame.targets()[0].target().name() == std::string("idback") && texid[2]) {
                             video = new ARVideo;
-                            video->openStreamingVideo("fema.wmv", texid[2]);
+                            video->openVideoFile("FMDDL.mp4", texid[2]);
+                            video_renderer = renderer[2];
+                        }
+                        else if(frame.targets()[0].target().name() == std::string("FMDDL") && texid[2]) {
+                            video = new ARVideo;
+                            video->openVideoFile("FMDDL.mp4", texid[2]);
+                            video_renderer = renderer[2];
+                        }
+                        else if(frame.targets()[0].target().name() == std::string("JLLZ") && texid[2]) {
+                            video = new ARVideo;
+                            video->openVideoFile("JLLZ.mp4", texid[2]);
+                            video_renderer = renderer[2];
+                        }
+                        else if(frame.targets()[0].target().name() == std::string("LRYH") && texid[2]) {
+                            video = new ARVideo;
+                            video->openVideoFile("LRYH.mp4", texid[2]);
                             video_renderer = renderer[2];
                         }
                     }
