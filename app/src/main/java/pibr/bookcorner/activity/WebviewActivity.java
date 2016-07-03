@@ -6,18 +6,21 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 import pibr.bookcorner.R;
 
 /**
  * Created by Administrator on 2015/12/28.
  */
-public class WebviewActivity extends Activity {
+public class WebviewActivity extends Activity implements View.OnClickListener{
 
     private WebView webView;
     String doubanapi = "http://douban.com/isbn/";
     private ImageButton back_IB;
+    private Button add_B;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,8 +39,6 @@ public class WebviewActivity extends Activity {
             }
         });
 
-
-
         back_IB = (ImageButton) findViewById(R.id.back);
         back_IB.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -45,6 +46,9 @@ public class WebviewActivity extends Activity {
                finish();
             }
         });
+
+        add_B = (Button)findViewById(R.id.add);
+        add_B.setOnClickListener(this);
     }
 
     //改写物理按键——返回的逻辑
@@ -66,4 +70,17 @@ public class WebviewActivity extends Activity {
         return super.onKeyDown(keyCode, event);
     }
 
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.add:
+                addToShelf();
+                Toast.makeText(this, "加入书架成功！", Toast.LENGTH_SHORT).show();
+                break;
+        }
+    }
+
+    private void addToShelf(){
+
+    }
 }

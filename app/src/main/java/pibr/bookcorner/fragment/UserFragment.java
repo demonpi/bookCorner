@@ -9,7 +9,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import pibr.bookcorner.R;
-
+ 
 /**
  * 首页“我的”列表页
  * 作者：pishao
@@ -27,7 +27,6 @@ public class UserFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_user, container, false);
-        TextView title_tv = (TextView) view.findViewById(R.id.title);
 
         return view;
     }

@@ -127,6 +127,11 @@ namespace EasyAR {
                             video->openVideoFile("LRYH.mp4", texid[2]);
                             video_renderer = renderer[2];
                         }
+                        else if(frame.targets()[0].target().name() == std::string("JYZHD") && texid[2]) {
+                            video = new ARVideo;
+                            video->openVideoFile("JYZHD.mp4", texid[2]);
+                            video_renderer = renderer[2];
+                        }
                     }
                     if (video) {
                         video->onFound();
